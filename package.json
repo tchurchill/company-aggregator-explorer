@@ -1,0 +1,85 @@
+{
+  "name": "woodland-seed",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 8100",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:ci": "CI=true vitest",
+    "coverage": "vitest run --coverage",
+    "format": "pretty-quick && pnpm run lint && git add .",
+    "lint": "eslint . --ext .ts,.tsx --fix"
+  },
+  "pre-commit": [
+    "format"
+  ],
+  "dependencies": {
+    "@react-stately/collections": "^3.3.7",
+    "@sps-woodland/cards": "^7.1.2",
+    "@sps-woodland/core": "^7.1.2",
+    "@sps-woodland/page-title": "^7.1.2",
+    "@sps-woodland/product-bar": "^7.1.2",
+    "@sps-woodland/tokens": "^7.1.2",
+    "@spscommerce/ds-colors": "^6.20.5",
+    "@spscommerce/ds-illustrations": "^6.37.3",
+    "@spscommerce/ds-react": "^6.20.5",
+    "@spscommerce/ds-shared": "^6.20.5",
+    "@spscommerce/ds-styles": "^6.20.5",
+    "@spscommerce/positioning": "^6.20.5",
+    "@spscommerce/services": "6.12.1",
+    "@spscommerce/utils": "6.12.1",
+    "axios": "^0.24.0",
+    "eventemitter3": "^3.1.2",
+    "moment": "^2.29.2",
+    "moment-timezone": "^0.5.34",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.3",
+    "typescript": "^4.8.2"
+  },
+  "devDependencies": {
+    "@spscommerce/eslint-config-typescript": "^0.0.7",
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.15",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@vanilla-extract/css": "^1.7.3",
+    "@vanilla-extract/vite-plugin": "^3.7.0",
+    "@vitejs/plugin-react-swc": "^3.0.1",
+    "@vitest/coverage-c8": "^0.31.1",
+    "@vitest/ui": "^0.31.1",
+    "eslint": "^7.32.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "jsdom": "^20.0.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.6.2",
+    "pretty-quick": "^3.1.3",
+    "vite": "^4.0.4",
+    "vite-plugin-mkcert": "^1.11.0",
+    "vitest": "^0.31.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "jquery",
+        "popper.js"
+      ]
+    }
+  },
+  "jest-junit": {
+    "outputDirectory": "test-report",
+    "outputName": "junit.xml"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "."
+}

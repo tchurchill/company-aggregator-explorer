@@ -1,0 +1,49 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    exclude:
+      - README.md
+      - .gitignore
+
+pr:
+  branches:
+    include:
+      - main
+  paths:
+    exclude:
+      - README.md
+      - .gitignore
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: spscommerce/azure-pipelines-templates
+      # Example: vsts-infrastructure-caf
+      endpoint: vsts-infrastructure-TEAMNAME
+
+extends:
+  template: core/bdp.base.v1.yml@templates
+  parameters:
+    bdpFile: .bdp
+    stages:
+      - template: ui/ui-build.stage.v1.yml@templates
+
+      - template: ui/ui-pr-deploy.stage.v1.yml@templates
+        parameters:
+          # Example: vsts-infrastructure-caf
+          githubConnection: vsts-infrastructure-TEAMNAME
+          # Example: https://cdn.dev.spsc.io/web/commerce-platform/ui/cp-auth-react/$(Build.BuildNumber)/index.html
+          url: https://commerce.spscommerce.com
+
+      - template: core/bdp-deploy.stage.v1.yml@templates
+        parameters:
+          dependsOn: BUILD
+          environment: test
+
+      - template: core/bdp-deploy.stage.v1.yml@templates
+        parameters:
+          environment: prod
+          requireApproval: true

@@ -1,0 +1,19 @@
+schema_version: v3.0
+
+service:
+  id: YOUR_TECH_REGISTRY_SERVICE_ID_HERE
+
+environments:
+  - name: test
+    region: us-east-1
+    account: 056684691971
+  - name: prod
+    region: us-east-1
+    account: 104966627370
+
+deploy:
+  - name: YOUR_DEPLOYMENT_NAME_HERE
+    deploy_type: static_assets
+    source_dir: build/ # the relative path to the static assets dir from the .bdp file
+    index_file: index.html # the index file to use for the static site in commerce platform
+    asset_type: static_site
