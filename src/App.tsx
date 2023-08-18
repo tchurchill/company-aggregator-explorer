@@ -11,6 +11,7 @@ import {
 import { Nav } from "./Nav";
 import type { AppProps } from "./Routes";
 import { ROUTES } from "./Routes";
+import "./App.scss";
 
 type RouteRenderPropType = ConstructorParameters<typeof Route>[0]["render"];
 
