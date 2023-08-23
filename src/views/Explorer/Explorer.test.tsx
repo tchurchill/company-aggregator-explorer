@@ -6,7 +6,7 @@ import * as React from "react";
 import { describe, it, expect } from "vitest";
 
 import { render } from "../../test/testUtils";
-import { Foo } from "./Foo";
+import { Explorer } from "./Explorer";
 
 interface TestFooProps {
   currentUser: IdentityUser;
@@ -17,7 +17,7 @@ const TestFoo: React.FC<TestFooProps> = function TestFoo(props) {
   const { currentUser, commercePlatform } = props;
   const [, createGrowler] = useGrowlers();
   return (
-    <Foo
+    <Explorer
       currentUser={currentUser}
       env="test"
       platform={commercePlatform}
@@ -26,7 +26,7 @@ const TestFoo: React.FC<TestFooProps> = function TestFoo(props) {
   );
 };
 
-describe("Foo", () => {
+describe("Explorer", () => {
   it("renders current user's name", () => {
     const fakeCurrentUser = {
       first_name: "Bob",

@@ -3,8 +3,7 @@ import type { CommercePlatform, IdentityUser } from "@spscommerce/services";
 import type { FC } from "react";
 import type { RouteProps } from "react-router-dom";
 
-import { Foo } from "./views/foo/Foo";
-import { Bar } from "./views/bar/Bar";
+import { Explorer } from "./views/Explorer/Explorer";
 
 export interface AppProps {
   env: string;
@@ -26,13 +25,8 @@ export interface Route {
  */
 export const ROUTES: Route[] = [
   {
-    path: "/foo",
-    Component: Foo,
-    nav: "Foo",
-  },
-  {
-    path: "/bar",
-    Component: Bar,
-    nav: "Bar",
-  },
+    path: "/Explorer",
+    Component: Explorer,
+    nav: "Explorer",
+  }
 ];
