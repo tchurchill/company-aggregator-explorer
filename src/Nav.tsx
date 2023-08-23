@@ -35,7 +35,7 @@ export function Nav({
 
   return (
     <ProductBar>
-      <ProductBarName name="Woodland Seed" />
+      <ProductBarName name="Company Aggregator" />
       {navRoutes.map((route) => (
         <ProductBarTab
           active={pathname.startsWith(route.path)}

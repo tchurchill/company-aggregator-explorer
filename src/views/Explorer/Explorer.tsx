@@ -9,7 +9,7 @@ import 'graphiql/graphiql.css';
 
 import type { AppRouteProps } from "../../Routes";
 
-export function Foo({
+export function Explorer({
   env,
   currentUser,
 }: AppRouteProps): React.ReactElement {
